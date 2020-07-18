@@ -1,10 +1,12 @@
 .header {
-  padding: 1em 1em;
-  background: $background-color-alt;
+  position: relative;
+  z-index: 3;
 
   &__services {
     display: flex;
     align-items: center;
+    padding: 1em 1em;
+    background: $background-color-alt;
 
     & > address,
     & > p {
@@ -14,6 +16,59 @@
     & > select {
       margin-left: auto;
     }
+  }
+
+  &__navbar {
+    padding: 1em 1.2em;
+    background-color: $main-background-color;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    & > .navbar,
+    & > .navbar__icons {
+      display: none;
+    }
+
+    & > .company-name {
+      color: $text-color;
+      font-size: $medium-font-size;
+      font-weight: 500;
+      min-width: 10%;
+    }
+
+    & > .navbar-toggle {
+      cursor: pointer;
+      color: transparentize($text-color, 0.5);
+      font-size: 1.1em;
+      border: 1px solid transparentize($text-color, 0.5);
+      border-radius: 7px;
+      padding: 0.2em 0.5em;
+    }
+  }
+
+  & .navbar-mobile {
+    position: relative;
+    z-index: -1;
+    height: 0;
+    overflow: hidden;
+    padding: 0 1em;
+    border-bottom: 1px solid $text-color;
+    transform-origin: top center;
+    transform: translate(0,-100%);
+    transition: transform 0.3s ease-in-out, height 0s ease-in-out 0.3s, padding-bottom 0.3s ease-in-out;
+
+    &.visible {
+      height: 100%;
+      transform: translate(0);
+      padding-bottom: 1em;
+    }
+
+    & .navbar__links > li + li,
+    & .navbar__icons {
+      margin-top: 0.75em;
+    }
+
   }
 
   @media all and (min-width: $breakpoint-medium) {
@@ -32,6 +87,25 @@
         margin-left: 1.7em;
         border-left: 1px solid #DEE2E6;
       }
+    }
+
+    &__navbar {
+      & > .navbar,
+      & > .navbar__icons {
+        display: flex;
+      }
+
+      & > .navbar__icons {
+        min-width: 10%;
+      }
+
+      & > .navbar-toggle {
+        display: none;
+      }
+    }
+
+    & .navbar-mobile {
+      display: none;
     }
   }
 }

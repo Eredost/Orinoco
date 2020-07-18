@@ -1,6 +1,7 @@
 @charset "UTF-8";
 
-@import "abstracts/variables";
+@import "abstracts/variables",
+  "abstracts/animations";
 
 @import "~reset-css/sass/reset",
   "~font-awesome/scss/font-awesome";
@@ -10,4 +11,5 @@
 
 @import "layouts/header";
 
-@import "components/select";
+@import "components/select",
+  "components/navbar";

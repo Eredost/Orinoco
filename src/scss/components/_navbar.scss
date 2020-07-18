@@ -1,0 +1,51 @@
+.navbar {
+  &:not(.navbar-mobile) {
+    & > .navbar__links li {
+      display: inline-block;
+    }
+
+    & > .navbar__links li + li {
+      margin-left: 1em;
+    }
+  }
+
+  &:not(.navbar-mobile) ~ .navbar__icons a + a {
+    margin-left: 1.4em;
+  }
+
+  &__links {
+    font-size: 1.15em;
+  }
+
+  &__icons {
+    font-size: 1.1em;
+    display: flex;
+    justify-content: space-between;
+
+    & > a {
+      color: $text-color;
+    }
+
+    & .shop-icon {
+      display: flex;
+      align-items: center;
+
+      & > * + * {
+        margin-left: 0.2em;
+      }
+
+      & .shop-icon__counter {
+        font-size: 0.8em;
+        padding: 0.08em 0.14em;
+        background-color: $text-color;
+        color: $text-color-alt;
+        border-radius: 5px;
+      }
+
+      & .shop-icon__arrow {
+        transform: rotate(90deg);
+        font-size: 0.75em;
+      }
+    }
+  }
+}

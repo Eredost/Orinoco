@@ -1,2 +1,34 @@
 // Font-Awesome
-$fa-font-path: "~font-awesome/fonts"
+// --------------------
+$fa-font-path: "~font-awesome/fonts";
+
+// Font sizes
+// --------------------
+$default-font-size: 16px;
+$medium-font-size: 20px;
+$large-font-path: 38px;
+
+$font-family: 'Roboto';
+$font-family-fallback: 'Helvetica', sans-serif;
+
+// Colors
+// --------------------
+$grey: #EEEEEE;
+$light-grey: #F6F6F6;
+$dark-grey: #555555;
+$white: #FFFFFF;
+$black: #000000;
+$light-black: #212529;
+
+$text-color: $light-black;
+$text-color-alt: $white;
+$main-background-color: $white;
+$background-color-alt: $grey;
+$lighter-background-color-alt: $light-grey;
+$darker-background-color-alt: $dark-grey;
+
+// Breakpoints
+// --------------------
+$breakpoint-small: 576px;
+$breakpoint-medium: 780px;
+$breakpoint-large: 1100px;

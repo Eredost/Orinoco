@@ -1,0 +1,37 @@
+.header {
+  padding: 1em 1em;
+  background: $background-color-alt;
+
+  &__services {
+    display: flex;
+    align-items: center;
+
+    & > address,
+    & > p {
+      display: none;
+    }
+
+    & > select {
+      margin-left: auto;
+    }
+  }
+
+  @media all and (min-width: $breakpoint-medium) {
+    &__services {
+      & > address,
+      & > p {
+        display: inline-block;
+      }
+
+      & > address a {
+        color: $text-color;
+      }
+
+      & > p {
+        padding-left: 1.7em;
+        margin-left: 1.7em;
+        border-left: 1px solid #DEE2E6;
+      }
+    }
+  }
+}

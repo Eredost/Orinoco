@@ -5,4 +5,9 @@
 @import "~reset-css/sass/reset",
   "~font-awesome/scss/font-awesome";
 
-@import "base/base";
+@import "base/base",
+  "base/typographies";
+
+@import "layouts/header";
+
+@import "components/select";

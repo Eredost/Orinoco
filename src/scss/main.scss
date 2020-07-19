@@ -11,9 +11,11 @@
 
 @import "layouts/header",
   "layouts/banner",
-  "layouts/products";
+  "layouts/products",
+  "layouts/footer";
 
 @import "components/select",
   "components/navbar",
   "components/filters",
-  "components/product";
+  "components/product",
+  "components/footer-services";

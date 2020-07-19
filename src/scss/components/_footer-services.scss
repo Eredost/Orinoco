@@ -1,0 +1,57 @@
+.footer-services {
+  background-color: $lighter-background-color-alt;
+  text-align: center;
+  padding: 1em 10px;
+
+  &__wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  &__service + &__service {
+    margin: 1.2em;
+  }
+
+  &__icon {
+    font-size: 3.5em;
+  }
+
+  &__text {
+    & > h2 {
+      text-transform: uppercase;
+      margin-top: 0.55em;
+    }
+
+    & > p {
+      color: transparentize($black, 0.5);
+      font-size: 0.86em;
+      margin-top: 0.6em;
+    }
+  }
+
+  @media all and (min-width: $breakpoint-medium) {
+    padding: 3em 0;
+
+    &__wrapper {
+      display: flex;
+      justify-content: space-evenly;
+    }
+
+    &__service {
+      display: flex;
+      align-items: center;
+    }
+
+    &__service + &__service,
+    &__text > h2 {
+      margin: 0;
+    }
+
+    &__text {
+      margin-left: 1em;
+      padding-left: 1em;
+      border-left: 1px solid #BBBBBB;
+      text-align: left;
+    }
+  }
+}

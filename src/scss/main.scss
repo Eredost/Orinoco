@@ -10,8 +10,10 @@
   "base/typographies";
 
 @import "layouts/header",
-  "layouts/banner";
+  "layouts/banner",
+  "layouts/products";
 
 @import "components/select",
   "components/navbar",
-  "components/filters";
+  "components/filters",
+  "components/product";

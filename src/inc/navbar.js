@@ -1,4 +1,4 @@
-// Object allowing support navigation on a mobile device
+// Object allowing navigation support on a mobile device
 let navbar = {
     init: function () {
         let navbarToggleButtonElement = document.querySelector('#navbar-toggle');

@@ -25,10 +25,7 @@ let app = {
      */
     fetchProducts: function () {
         return get('http://localhost:3000/api/cameras')
-            .then(response => response.json())
-            .catch(function (error) {
-                window.alert('AJAX request failed, please try again later');
-            });
+            .then(response => response.json());
     },
 
     /**

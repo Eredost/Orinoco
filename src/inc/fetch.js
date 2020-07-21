@@ -13,7 +13,10 @@ function get (url) {
         }
     }
 
-    return window.fetch(url, $header);
+    return window.fetch(url, $header)
+        .catch(function (error) {
+            window.alert('AJAX request failed, please try again later');
+        });
 }
 
 module.exports = get;

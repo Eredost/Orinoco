@@ -1,6 +1,7 @@
 import navbar from './inc/navbar';
 import get from './inc/fetch';
 import localData from './inc/localStorageData';
+import toast from './inc/toast';
 
 let app = {
     init: function () {
@@ -77,6 +78,9 @@ let app = {
 
         // Add product to localStorage
         localData.addProduct(this.dataset.id);
+
+        // Show confirmation message
+        toast.showMessage('Article ajouté avec succès !')
 
         // Refreshes the cart counters
         navbar.refreshShopCounter(localData.getProductsCount());

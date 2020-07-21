@@ -48,6 +48,7 @@
         border: 1px solid $text-color;
         border-radius: 5px;
         margin-right: 1em;
+        margin-top: 1em;
         transition: .2s;
         cursor: pointer;
 
@@ -72,6 +73,13 @@
       & .product-preview__call-to-actions {
         text-align: right;
         margin-top: auto;
+      }
+
+      & .product-preview__call-to-actions {
+        & > button {
+          margin-top: 0;
+          margin-left: 2em;
+        }
       }
     }
   }

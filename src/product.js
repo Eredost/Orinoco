@@ -61,6 +61,16 @@ let app = {
         // Shop button
         templateClone.querySelector('.shop-button').addEventListener('click', app.handleShopButtonClick);
 
+        // Select input
+        let selectElement = templateClone.querySelector('#lenses');
+
+        for (let lense of product.lenses) {
+            let optionElement = document.createElement('option');
+            optionElement.value = optionElement.textContent = lense;
+
+            selectElement.appendChild(optionElement);
+        }
+
         targetElement.appendChild(templateClone);
     },
 

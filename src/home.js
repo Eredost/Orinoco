@@ -1,11 +1,16 @@
 import navbar from './inc/navbar';
 import get from './inc/fetch';
+import localData from './inc/localStorageData';
 
 let app = {
     init: function () {
-        // Handle events related to the navigation bar
         navbar.init();
+        localData.init();
 
+        // Updates the article counter when refreshing a page
+        navbar.refreshShopCounter(localData.getProductsCount());
+
+        // Retrieves the products from the database and calls the associated method to display them
         app.fetchProducts()
             .then(function (response) {
                 app.displayProducts(response);
@@ -19,7 +24,10 @@ let app = {
      */
     fetchProducts: function () {
         return get('http://localhost:3000/api/cameras')
-            .then(response => response.json());
+            .then(response => response.json())
+            .catch(function (error) {
+                window.alert('AJAX request failed, please try again later');
+            });
     },
 
     /**
@@ -37,11 +45,18 @@ let app = {
 
             // Image div parent
             templateClone.querySelector('.product__image').href ='produit.html?id='+product._id;
+
             // Image tag
             templateClone.querySelector('img').src = product.imageUrl;
             templateClone.querySelector('img').alt = product.name;
+
+            // Shop button
+            templateClone.querySelector('.shop-button').dataset.id = product._id;
+            templateClone.querySelector('.shop-button').addEventListener('click', app.handleShopButtonClick);
+
             // Preview button
             templateClone.querySelector('.preview-button').href = 'produit.html?id='+product._id;
+
             // Description paragraphs
             templateClone.querySelector('.product__name').textContent = product.name;
             templateClone.querySelector('.product__price').textContent = product.price + '€';
@@ -49,6 +64,22 @@ let app = {
             // Add the item's clone to the parent 'products'
             targetElement.appendChild(templateClone);
         }
+    },
+
+    /**
+     * Manage the addition of a product when clicking on the shopping cart button
+     *
+     * @param {MouseEvent} event
+     */
+    handleShopButtonClick: function (event) {
+        // Remove default behavior of link
+        event.preventDefault();
+
+        // Add product to localStorage
+        localData.addProduct(this.dataset.id);
+
+        // Refreshes the cart counters
+        navbar.refreshShopCounter(localData.getProductsCount());
     }
 }
 

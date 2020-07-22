@@ -17,7 +17,7 @@ let localStorageData = {
      * @returns {Object}
      */
     getProducts: function () {
-        return localStorage.getItem('products');
+        return localStorage.getItem('products') ?? '{}';
     },
 
     /**

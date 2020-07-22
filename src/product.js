@@ -56,6 +56,7 @@ let app = {
         templateClone.querySelector('.product-preview__text').textContent = product.description;
 
         // Product price
+        templateClone.querySelector('.shop-button').dataset.id = product._id;
         templateClone.querySelector('.product-preview__price').textContent = product.price + '€';
 
         // Shop button

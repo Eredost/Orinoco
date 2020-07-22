@@ -41,17 +41,40 @@ let localStorageData = {
     /**
      * Returns the total value of all products stored in the localStorage
      *
-     * @returns {number}
+     * @returns {number} result
      */
     getProductsCount: function () {
         let products = JSON.parse(localStorageData.getProducts());
         let result = 0;
 
         for (let i in products) {
-            result += products[i];
+            result += parseInt(products[i], 10);
         }
 
         return result;
+    },
+
+    /**
+     * Updates the item count for a product with the given id
+     *
+     * @param {string} productId
+     * @param {number} count
+     */
+    updateProductCount: function (productId, count) {
+        let products = JSON.parse(localStorageData.getProducts());
+        products[productId] = count;
+        localStorage.setItem('products', JSON.stringify(products));
+    },
+
+    /**
+     * Deletes a product from localStorage using an identifier
+     *
+     * @param {string} productId
+     */
+    deleteProduct: function (productId) {
+        let products = JSON.parse(localStorageData.getProducts());
+        delete products[productId];
+        localStorage.setItem('products', JSON.stringify(products));
     }
 }
 

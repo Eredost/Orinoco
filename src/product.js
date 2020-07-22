@@ -19,7 +19,12 @@ let app = {
         } else {
             app.fetchProduct()
                 .then(function (response) {
-                    app.displayProduct(response);
+                    if (response.hasOwnProperty('_id')) {
+                        app.displayProduct(response);
+                    } else {
+                        app.displayNotFound();
+                    }
+
                 })
         }
     },

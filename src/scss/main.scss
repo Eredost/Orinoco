@@ -11,7 +11,8 @@
 
 @import "layouts/header",
   "layouts/banner",
-  "layouts/products";
+  "layouts/products",
+  "layouts/basket";
 
 @import "components/select",
   "components/navbar",
@@ -21,4 +22,7 @@
   "components/footer-menus",
   "components/footer-copyrights",
   "components/product-preview",
-  "components/toast";
+  "components/toast",
+  "components/product-basket",
+  "components/product-summary",
+  "components/order";

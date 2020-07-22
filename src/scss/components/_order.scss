@@ -1,0 +1,89 @@
+.order {
+  padding: 1em;
+  max-width: 400px;
+  min-width: 250px;
+  margin: 2em auto;
+  background-color: #F6F6F6;
+
+  &__title {
+    text-transform: uppercase;
+    margin-bottom: 1em;
+  }
+
+  &__paragraph {
+    margin-bottom: 2em;
+  }
+
+  & > form {
+    & div:nth-of-type(1),
+    & div:nth-of-type(2) {
+      display: inline-block;
+      width: 45%;
+    }
+
+    & div:nth-of-type(2) {
+      margin-left: 8.8%;
+    }
+
+    & label,
+    & input {
+      width: 100%;
+    }
+
+    & label {
+      display: inline-block;
+      margin-bottom: 0.35em;
+    }
+
+    & input {
+      margin-bottom: 1em;
+      border: none;
+      background-color: darken(#F6F6F6, 6);
+      border-radius: 4px;
+      padding: 0.19em 0.7em;
+
+      &:focus {
+        background-color: darken(#F6F6F6, 14);
+      }
+    }
+
+    & .errors {
+      color: #ff4444;
+
+      & > p + p {
+        margin-top: 0.6em;
+      }
+    }
+
+    & button {
+      float: right;
+      margin-top: 1em;
+      font-size: 1em;
+      padding: 0.2em 0.4em;
+      background-color: $text-color;
+      color: $text-color-alt;
+      border: 1px solid transparent;
+      border-radius: 5px;
+      margin-right: 1em;
+      margin-top: 1em;
+      transition: .2s;
+      cursor: pointer;
+
+      &:hover {
+        background: transparent;
+        border: 1px solid $text-color;
+        color: $text-color;
+      }
+    }
+
+    &::after {
+      content: '';
+      display: table;
+      clear: both;
+    }
+  }
+
+  @media all and (min-width: $breakpoint-medium) {
+    margin: 2em 0 0 2em;
+  }
+}

@@ -1,0 +1,27 @@
+.basket {
+  padding: 1em 10px;
+  margin: 0 auto;
+  max-width: 1200px;
+
+  &__title {
+    font-size: 1.75em;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 0.7em;
+  }
+
+  &__subhead {
+    color: transparentize($black, 0.5);
+    font-size: 1.15em;
+    text-align: center;
+    margin-bottom: 1.4em;
+  }
+
+  @media all and (min-width: $breakpoint-medium) {
+    padding: 2em 10px;
+
+    &__wrapper {
+      display: flex;
+    }
+  }
+}

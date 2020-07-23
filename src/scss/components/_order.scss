@@ -15,14 +15,18 @@
   }
 
   & > form {
-    & div:nth-of-type(1),
-    & div:nth-of-type(2) {
-      display: inline-block;
-      width: 45%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    & > div {
+      width: 100%;
+      margin-bottom: 1em;
     }
 
-    & div:nth-of-type(2) {
-      margin-left: 8.8%;
+    & > div:nth-of-type(1),
+    & > div:nth-of-type(2) {
+      width: 47%;
     }
 
     & label,
@@ -36,11 +40,10 @@
     }
 
     & input {
-      margin-bottom: 1em;
       border: none;
       background-color: darken(#F6F6F6, 6);
       border-radius: 4px;
-      padding: 0.19em 0.7em;
+      padding: 0.4em 0.7em;
 
       &:focus {
         background-color: darken(#F6F6F6, 14);
@@ -49,14 +52,17 @@
 
     & .errors {
       color: #ff4444;
+      font-size: 0.9em;
+      margin-top: 0.6em;
+      line-height: 1.2;
+    }
 
-      & > p + p {
-        margin-top: 0.6em;
-      }
+    & .required {
+      color: #ff4444;
     }
 
     & button {
-      float: right;
+      margin-left: auto;
       margin-top: 1em;
       font-size: 1em;
       padding: 0.2em 0.4em;
@@ -65,7 +71,6 @@
       border: 1px solid transparent;
       border-radius: 5px;
       margin-right: 1em;
-      margin-top: 1em;
       transition: .2s;
       cursor: pointer;
 
@@ -74,12 +79,6 @@
         border: 1px solid $text-color;
         color: $text-color;
       }
-    }
-
-    &::after {
-      content: '';
-      display: table;
-      clear: both;
     }
   }
 

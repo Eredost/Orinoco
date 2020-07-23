@@ -1,5 +1,5 @@
 import navbar from './inc/navbar';
-import get from './inc/fetch';
+import {get} from './inc/fetch';
 import localData from './inc/localStorageData';
 import toast from './inc/toast';
 

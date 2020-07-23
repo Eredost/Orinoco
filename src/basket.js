@@ -1,6 +1,7 @@
 import navbar from './inc/navbar';
-import get from './inc/fetch';
+import {get} from './inc/fetch';
 import localData from './inc/localStorageData';
+import {form} from './inc/form';
 
 let app = {
     init: function () {
@@ -20,8 +21,12 @@ let app = {
                 });
         }
 
+        // Retrieves the items from the product summary
         app.summarySubtotal = document.querySelector('.subtotal__price');
         app.summaryTotal = document.querySelector('.total__price');
+
+        // Handle form validations
+        form.init();
     },
 
     /**

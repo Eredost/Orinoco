@@ -57,7 +57,7 @@ let app = {
 
             // Description paragraphs
             templateClone.querySelector('.product__name').textContent = product.name;
-            templateClone.querySelector('.product__price').textContent = product.price + '€';
+            templateClone.querySelector('.product__price').textContent = (product.price / 100) + '€';
 
             // Add the item's clone to the parent 'products'
             targetElement.appendChild(templateClone);

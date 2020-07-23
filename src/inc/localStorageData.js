@@ -4,8 +4,10 @@
  */
 let localStorageData = {
     init: function () {
+        let storage = localStorageData.getProducts();
         // Add the products JSON string to the localStorage if it does not exist
-        if (null === localStorageData.getProducts()) {
+        if (null === storage
+            || '' === storage) {
             localStorage.setItem('products', JSON.stringify({}))
         }
     },
@@ -75,6 +77,23 @@ let localStorageData = {
         let products = JSON.parse(localStorageData.getProducts());
         delete products[productId];
         localStorage.setItem('products', JSON.stringify(products));
+    },
+
+    /**
+     * Checks if the product object in localStorage is empty
+     *
+     * @returns {boolean}
+     */
+    productsIsEmpty: function () {
+        let products = JSON.parse(localStorageData.getProducts());
+        let propertiesCounter = 0;
+
+        // Adds the number of properties of the product object
+        for (let product in products) {
+            propertiesCounter++;
+        }
+
+        return propertiesCounter === 0;
     }
 }
 

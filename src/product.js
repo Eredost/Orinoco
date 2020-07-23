@@ -62,7 +62,7 @@ let app = {
 
         // Product price
         templateClone.querySelector('.shop-button').dataset.id = product._id;
-        templateClone.querySelector('.product-preview__price').textContent = product.price + '€';
+        templateClone.querySelector('.product-preview__price').textContent = (product.price / 100) + '€';
 
         // Shop button
         templateClone.querySelector('.shop-button').addEventListener('click', app.handleShopButtonClick);

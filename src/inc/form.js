@@ -143,17 +143,34 @@ export let form = {
     },
 
     /**
+     * Checks if the products object is valid
+     *
+     * @returns {boolean}
+     */
+    productsIsValid: function () {
+        if (localData.productsIsEmpty()) {
+            alert('Vous devez d\'abord ajouter des produits dans votre panier pour pouvoir commander');
+
+            return false;
+        }
+
+        return true;
+    },
+
+    /**
      * Supports form submission, checks validation of all fields and retrieves the contact object
      *
      * @param {Event} event
      */
     handleFormSubmit: function (event) {
+        // Removes the default behavior from the form
+        event.preventDefault();
+
+        // Validates all the input fields of the form
         if (!form.formInputsAreValid()) {
 
             return;
         }
-        // Removes the default behavior from the form
-        event.preventDefault();
 
         // Retrieve the products and place their identifier in a table
         let productsObject = JSON.parse(localData.getProducts());
@@ -190,7 +207,8 @@ export let form = {
      * @returns {boolean}
      */
     formInputsAreValid: function () {
-        return form.firstNameIsValid()
+        return form.productsIsValid()
+            && form.firstNameIsValid()
             && form.lastNameIsValid()
             && form.addressIsValid()
             && form.cityIsValid()

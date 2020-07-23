@@ -59,7 +59,7 @@ let app = {
         templateClone.querySelector('.product-basket__name').textContent = product.name;
 
         // Product price
-        templateClone.querySelector('.product-basket__price').textContent = product.price + '€';
+        templateClone.querySelector('.product-basket__price').textContent = (product.price / 100) + '€';
 
         // Product quantity buttons and input
         let quantityInput = templateClone.querySelector('#quantity');
@@ -70,7 +70,7 @@ let app = {
         quantityInput.value = count;
 
         // Product total price
-        templateClone.querySelector('.product-basket__total').textContent = (product.price * count) + '€';
+        templateClone.querySelector('.product-basket__total').textContent = ((product.price / 100) * count) + '€';
 
         targetElement.appendChild(templateClone);
 

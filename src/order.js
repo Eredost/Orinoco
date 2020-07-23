@@ -40,8 +40,8 @@ let app = {
             let nameElement = document.createElement('p');
             let priceElement = document.createElement('span');
 
-            nameElement.textContent = product.name + '€';
-            priceElement.textContent = product.price + '€';
+            nameElement.textContent = product.name;
+            priceElement.textContent = (product.price / 100) + '€';
             total += parseInt(product.price, 10);
 
             divElement.appendChild(nameElement);
@@ -55,7 +55,7 @@ let app = {
         let priceElement = document.createElement('span');
 
         nameElement.textContent = 'Total';
-        priceElement.textContent = total + '€';
+        priceElement.textContent = (total / 100) + '€';
 
         divElement.appendChild(nameElement);
         divElement.appendChild(priceElement);

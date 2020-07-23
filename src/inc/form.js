@@ -178,7 +178,7 @@ export let form = {
                 // Adds the order object retrieved in the request
                 localStorage.setItem('order', JSON.stringify(response));
                 // Remove products from localstorage
-                //localStorage.removeItem('products');
+                localStorage.removeItem('products');
                 //Redirects to the order confirmation page
                 window.location.href = 'commande.html';
             })

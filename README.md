@@ -18,5 +18,6 @@ console when the server starts, e.g. `Listening on port 3001`.
 
 ## Additional docs ##
 
+* [Wireframes](./docs/wireframes)
 * [Application mockups](https://www.figma.com/file/GvrFELlayM21wyFlwx1bOQ/Orinoco?node-id=0%3A1)
 * [Kanban (Trello)](https://trello.com/b/sMpfypEj/orinoco)
